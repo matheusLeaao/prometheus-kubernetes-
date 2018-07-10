@@ -42,4 +42,6 @@ receivers:
   email_configs:
   - to: 'your_alert_email_address'
     send_resolved: true
+  pagerduty_configs:
+  - service_key: 'your_integr_key'
 - name: 'null'

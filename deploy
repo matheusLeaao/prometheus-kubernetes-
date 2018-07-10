@@ -322,6 +322,21 @@ if [[ $use_slack =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sed -i -e 's/your_slack_channel/'"$slack_channel"'/g' assets/alertmanager/alertmanager.yaml
 fi
 
+#Do you want to set up pagerduty?
+echo
+echo -e "${BLUE}Do you want to set up pagerduty alerts?"
+tput sgr0
+read -p "Y/N [N]: " use_pager
+
+#if so, fill out this form...
+if [[ $use_pager =~ ^([yY][eE][sS]|[yY])$ ]]; then
+
+  read -p "Integration key: " pager_integr_key
+
+  #again, our sed is funky due to slashes appearing in slack api tokens
+  sed -i -e 's,your_integr_key,'"$pager_integr_key"',g' assets/alertmanager/alertmanager.yaml
+fi
+
 echo
 echo -e "${BLUE}Removing all the sed generated files"
 find . -name "*.yaml-e" -exec rm -rf {} \;
