@@ -44,4 +44,5 @@ receivers:
     send_resolved: true
   pagerduty_configs:
   - service_key: 'your_integr_key'
+    send_resolved: true
 - name: 'null'
