@@ -1,5 +1,6 @@
 # Monitoring Kubernetes  clusters on AWS, GCP and Azure using Prometheus Operator by CoreOS
 
+## Recomendo utilizar o projeto original atualizado: https://github.com/camilb/prometheus-kubernetes
 
 ![alt](https://www.camil.org/content/images/2017/cluster.png)
 
